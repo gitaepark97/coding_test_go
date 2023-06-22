@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 // Question:
 // 세준이는 기말고사를 망쳤다. 세준이는 점수를 조작해서 집에 가져가기로 했다. 일단 세준이는 자기 점수 중에 최댓값을 골랐다. 이 값을 M이라고 한다. 그리고 나서 모든 점수를 점수/M*100으로 고쳤다.
@@ -12,20 +16,21 @@ import "fmt"
 
 // Output:
 // 첫째 줄에 새로운 평균을 출력한다. 실제 정답과 출력값의 절대오차 또는 상대오차가 10-2 이하이면 정답이다.
+
+var r = bufio.NewReader(os.Stdin)
+var w = bufio.NewWriter(os.Stdout)
+
 func main() {
-	var avg float64
+	defer w.Flush()
 
 	var count int
+	var score, max float64
+	var sum, avg float64
 
-	fmt.Scanln(&count)
+	fmt.Fscan(r, &count)
 
-	var sum float64 = 0
-	var max float64 = 0
-	
 	for i := 0; i < count; i++ {
-		var score float64
-
-		fmt.Scan(&score)
+		fmt.Fscan(r, &score)
 
 		if (score > max) {
 			max = score
@@ -36,5 +41,5 @@ func main() {
 
 	avg = sum * 100 / max / float64(count)
 
-	fmt.Print(avg)
+	fmt.Fprint(w, avg)
 }

@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -14,14 +16,19 @@ import (
 
 // Output:
 // 입력으로 주어진 숫자 N개의 합을 출력한다.
+
+var r = bufio.NewReader(os.Stdin)
+var w = bufio.NewWriter(os.Stdout)
+
 func main() {
+	defer w.Flush()
+
 	var count int
 	var nums string
+	var sum int
 
-	fmt.Scanln(&count)
-	fmt.Scanln(&nums)
-
-	sum := 0;
+	fmt.Fscan(r, &count)
+	fmt.Fscan(r, &nums)
 
 	arrNums := strings.Split(nums, "")
 
@@ -30,6 +37,6 @@ func main() {
 		sum += n
 	}
 
-	fmt.Print(sum)
+	fmt.Fprint(w, sum)
 }
 
