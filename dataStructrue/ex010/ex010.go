@@ -54,16 +54,17 @@ func main() {
 	defer w.Flush()
 
 	var n, l int
-	var d Deque
 
 	fmt.Fscan(r, &n, &l)
+
+	d := make(Deque, 0, n)
 
 	for i := 0; i < n; i++ {
 		var now int
 
 		fmt.Fscan(r, &now)
 
-		if !d.isEmpty() && d.getFirst().idx <= i-l {
+		if !d.isEmpty() && d.getFirst().idx <= i - l {
 			d.popFirst()
 		}
 
