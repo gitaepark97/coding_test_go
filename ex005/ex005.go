@@ -6,10 +6,9 @@ import (
 	"os"
 )
 
-var r = bufio.NewReader(os.Stdin)
-var w = bufio.NewWriter(os.Stdout)
-
 func main() {
+	var r = bufio.NewReader(os.Stdin)
+	var w = bufio.NewWriter(os.Stdout)
 	defer w.Flush()
 
 	var n, m int

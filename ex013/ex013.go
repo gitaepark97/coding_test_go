@@ -18,11 +18,9 @@ import (
 // Output:
 // 첫째 줄에 남게 되는 카드의 번호를 출력한다.
 
-var r = bufio.NewReader(os.Stdin)
-var w = bufio.NewWriter(os.Stdout)
-
-
 func main() {
+	var r = bufio.NewReader(os.Stdin)
+	var w = bufio.NewWriter(os.Stdout)
 	defer w.Flush()
 	
 	var n int

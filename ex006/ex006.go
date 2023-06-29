@@ -17,10 +17,9 @@ import (
 // Output:
 // 입력된 자연수 N을 몇 개의 연속된 자연수의 합으로 나타내는 가지수를 출력하시오
 
-var r = bufio.NewReader(os.Stdin)
-var w = bufio.NewWriter(os.Stdout)
-
 func main() {
+	var r = bufio.NewReader(os.Stdin)
+	var w = bufio.NewWriter(os.Stdout)
 	defer w.Flush()
 
 	var n int

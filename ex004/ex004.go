@@ -16,10 +16,9 @@ import (
 // Output:
 // 총 M줄에 걸쳐 (x1, y1)부터 (x2, y2)까지 합을 구해 출력한다.
 
-var r = bufio.NewReader(os.Stdin)
-var w = bufio.NewWriter(os.Stdout)
-
 func main() {
+	var r = bufio.NewReader(os.Stdin)
+	var w = bufio.NewWriter(os.Stdout)
 	defer w.Flush()
 
 	var n, m int

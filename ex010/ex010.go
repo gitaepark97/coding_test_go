@@ -17,9 +17,6 @@ import (
 // Output:
 // 첫째 줄에 Di를 공백으로 구분하여 순서대로 출력한다.
 
-var r = bufio.NewReader(os.Stdin)
-var w = bufio.NewWriter(os.Stdout)
-
 type Node struct {
 	idx, val int
 }
@@ -51,6 +48,8 @@ func (d *Deque) popLast() {
 }
 
 func main() {
+	var r = bufio.NewReader(os.Stdin)
+	var w = bufio.NewWriter(os.Stdout)
 	defer w.Flush()
 
 	var n, l int

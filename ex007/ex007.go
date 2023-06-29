@@ -17,10 +17,9 @@ import (
 // Output:
 // 첫째 줄에 갑옷을 만들 수 있는 개수를 출력한다.
 
-var r = bufio.NewReader(os.Stdin)
-var w = bufio.NewWriter(os.Stdout)
-
 func main() {
+	var r = bufio.NewReader(os.Stdin)
+	var w = bufio.NewWriter(os.Stdout)
 	defer w.Flush()
 
 	var n, m int

@@ -21,9 +21,6 @@ import (
 // Output:
 // 첫 번째 줄에 민호가 만들 수 있는 비밀번호의 종류의 수를 출력해라.
 
-var r = bufio.NewReader(os.Stdin)
-var w = bufio.NewWriter(os.Stdout)
-
 type myCheck struct {
 	checkArr [4]int
 	myArr [4]int
@@ -81,6 +78,8 @@ func (myCheck *myCheck) remove(c string) {
 }
 
 func main() {
+	var r = bufio.NewReader(os.Stdin)
+	var w = bufio.NewWriter(os.Stdout)
 	defer w.Flush()
 
 	var s, p int
